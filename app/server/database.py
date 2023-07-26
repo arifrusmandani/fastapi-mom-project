@@ -4,8 +4,10 @@ import motor.motor_asyncio
 from bson.objectid import ObjectId
 from pydantic import BaseModel
 
+from app.server.core.config import MONGO_PASS, MONGO_USER
+
 # MONGO_DETAILS = "mongodb://localhost:27017"
-MONGO_DETAILS = "mongodb+srv://arifrusmandani:wKPbg3JbrkBLCBPY@clusster-mom.wcorjpe.mongodb.net/?retryWrites=true&w=majority"
+MONGO_DETAILS = f"mongodb+srv://{MONGO_USER}:{MONGO_PASS}@clusster-mom.wcorjpe.mongodb.net/?retryWrites=true&w=majority"
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 
