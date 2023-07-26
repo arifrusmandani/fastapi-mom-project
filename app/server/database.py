@@ -4,11 +4,12 @@ import motor.motor_asyncio
 from bson.objectid import ObjectId
 from pydantic import BaseModel
 
-MONGO_DETAILS = "mongodb://localhost:27017"
+# MONGO_DETAILS = "mongodb://localhost:27017"
+MONGO_DETAILS = "mongodb+srv://arifrusmandani:wKPbg3JbrkBLCBPY@clusster-mom.wcorjpe.mongodb.net/?retryWrites=true&w=majority"
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 
-database = client.local
+database = client["clusster-mom"]
 
 
 class BaseCRUD():
